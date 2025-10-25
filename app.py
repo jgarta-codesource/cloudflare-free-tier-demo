@@ -1,4 +1,6 @@
-###Basic Flask endpoint that returns all HTTP request headers in the body of the HTTP response.
+###custom Flask endpoint that returns all HTTP request headers in the body of the HTTP response.
+##for further references please review [1] [2] [3] in read.ME
+
 from flask import Flask, jsonify, request, render_template_string
 
 app = Flask(__name__)
