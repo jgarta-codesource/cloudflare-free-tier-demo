@@ -23,5 +23,11 @@ def homepage():
     """
     return render_template_string(headers_html, headers=dict(request.headers))
 
+@app.route('/secure')
+def secure_page():
+    if request.headers.get('Host') != 'tunnel.jgarta.services':
+        return 'Forbidden', 403
+    return "This is a secure page"
+
 if __name__ == '__main__':
     app.run(debug=True)
